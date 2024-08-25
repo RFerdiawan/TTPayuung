@@ -62,7 +62,7 @@ class _MainPageState extends State<MainPage> {
           ),
           BlocBuilder<BottomSheetCubit, BottomSheetState>(
             builder: (context, state) {
-              double minChildSize = 0.14;
+              double minChildSize = 0.15;
               double maxChildSize = 0.3;
               if (state is BottomSheetPageState) {
                 minChildSize = state.sheetHeight;

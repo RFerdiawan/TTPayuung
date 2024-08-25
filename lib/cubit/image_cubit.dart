@@ -5,7 +5,6 @@ import 'package:image_picker/image_picker.dart';
 class ImageCubit extends Cubit<String?> {
   final box = GetStorage();
   final String key = 'profile_picture';
-  final ImagePicker _picker = ImagePicker();
 
   ImageCubit() : super(null) {
     emit(box.read(key));
@@ -50,27 +49,4 @@ class ImageCubit extends Cubit<String?> {
       emit(savedImagePath);
     }
   }
-
-  // Future<void> pickKTPImageFromGallery() async {
-  //   final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-  //   if (image != null) {
-  //     box.write('ktpPath', image.path);
-
-  //     emit(image.path);
-  //   }
-  // }
-
-  // Future<void> pickKTPImageFromCamera() async {
-  //   final XFile? image = await _picker.pickImage(source: ImageSource.camera);
-  //   if (image != null) {
-  //     box.write('ktpPath', image.path);
-
-  //     emit(image.path);
-  //   }
-  // }
-
-  // void loadSavedKTPImage() {
-  //   final String? savedPath = box.read('ktpPath');
-  //   emit(savedPath);
-  // }
 }
